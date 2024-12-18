@@ -2,7 +2,7 @@ public class Book {
 
   String title ;
   String author;
-  private double price ;
+  double price ;
 
   public Book(String btitle, String auth, double prc){
     this.title = btitle;

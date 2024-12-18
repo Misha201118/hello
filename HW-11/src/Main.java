@@ -20,6 +20,23 @@ public class Main {
       Circle.calculateCircumference(c)
     );
 
+    Student st1 = new Student("john", 2, 4.5, 3);
+    Student st2 = new Student("marry", 1, 7, 3);
+    Student st3 = new Student("michael", 0, 2.5, 3);
+
+    st1.addBook(b1);
+    st2.addBook(b3);
+    st2.addBook(b2);
+    st2.addBook(b1);
+    st3.addBook(b2);
+    st3.addBook(b3);
+
+    st3.updateGrade(4.5);
+
+    st1.printInfo();
+    st2.printInfo();
+    st3.printInfo();
+
   }
 
 }

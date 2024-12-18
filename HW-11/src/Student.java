@@ -25,6 +25,26 @@ public class Student {
     averageGrade=avGr;
   }
 
+  public String lsBooks(String pref){
+    String res="";
+    for(int i=0;i<this.cursor;i++){
+      res+=String.format(
+        """
+        %sbook%d:
+        %s  title : %s
+        %s  author: %s
+        %s  price : %f
+
+        """,
+        pref, i,
+        pref, books[i].title,
+        pref, books[i].author,
+        pref, books[i].price
+      );
+    }
+    return res;
+  }
+
   public void printInfo(){
     System.out.printf(
             """
@@ -32,11 +52,14 @@ public class Student {
             name   : %s
             group  : %d
             avGrade: %f
-            books  :\n%s 
+            books:
+
+            %s
             """,
             this.name,
             this.groupNumber,
             this.averageGrade,
+            this.lsBooks("  ")
     );
   }
 
