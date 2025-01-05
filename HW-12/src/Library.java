@@ -47,11 +47,34 @@ public class Library{
   }
 
   public static void rmBook(Library lib, int ind){
-    if(ind >= 0 && ind < lib.capacity){
+    if(ind >= 0 && ind < lib.inventory.length){
       lib.inventory[ind]=null;
       vacuum(lib, 0);
     };
   }
 
-  public static int
+  public static int getIndexByName(Library lib, String name){
+    for(int i=0;i<lib.inventory.length;i++){
+      if(null==lib.inventory[i])
+        break;
+      if(name.equals(lib.inventory[i].title))
+        return i;
+    }
+    return -1;
+  }
+
+  public static int getIndexByAuth(Library lib, String auth){
+    for(int i=0;i<lib.inventory.length;i++){
+      if(null==lib.inventory[i])
+        break;
+      if(auth.equals(lib.inventory[i].author))
+        return i;
+    }
+    return -1;
+  }
+
+  public static int bookc(Library lib){
+    return lib.cursor;
+  }
+
 }

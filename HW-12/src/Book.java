@@ -1,7 +1,7 @@
 public class Book {
 
-  private String title ;
-  private String author;
+  String title ;
+  String author;
   private double price ;
   private int year;
 
