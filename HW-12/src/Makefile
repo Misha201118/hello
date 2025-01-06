@@ -8,13 +8,13 @@ all: Main.class
 	@echo "now you can type"
 	@echo "  make run"
 
-Main.class: Main.java Book.class Circle.class Library.class
+Main.class: Main.java Book.class Account.class Library.class
 	$(JAVAC) $<
 
 Book.class: Book.java
 	$(JAVAC) $<
 
-Circle.class: Circle.java
+Account.class: Account.java
 	$(JAVAC) $<
 
 Library.class: Library.java

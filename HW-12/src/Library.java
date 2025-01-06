@@ -35,7 +35,7 @@ public class Library{
         limiter++;
 
       } else if(curs<limiter) {
-        lib.inventory[curs] = lib.inventory[i];
+        lib.inventory[nulls[curs]] = lib.inventory[i];
         lib.inventory[i]    = null;
         nulls[limiter]      = i;
         limiter++;
@@ -49,6 +49,7 @@ public class Library{
   public static void rmBook(Library lib, int ind){
     if(ind >= 0 && ind < lib.inventory.length){
       lib.inventory[ind]=null;
+      lib.cursor--;
       vacuum(lib, 0);
     };
   }
